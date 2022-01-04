@@ -66,7 +66,7 @@ class InvestmentDBOpenHelper(context: Context,
         val investments = ArrayList<Investment>()
 
         while(cursor.moveToNext()) {
-		    val check = cursor.getColumnIndex(COLUMN_NAME) != null
+		    val check = cursor.getColumnIndex(COLUMN_NAME) >= 0
             if (check) {
 			    val name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME))
                 val amount = cursor.getFloat(cursor.getColumnIndex(COLUMN_AMOUNT))
